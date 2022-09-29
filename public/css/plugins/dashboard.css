@@ -1,5 +1,6 @@
 .thecont{
 	margin-top: 70px;
+    margin-bottom: 0;
 }
 .therow {
 	margin: 0 -15px 0 -15px;
@@ -11,6 +12,10 @@
 	.therow {
 		margin: 0 -20px 0 -20px;
 	}
+}
+
+.thecont2 {
+    margin-top: 0;
 }
 .bg-animate{
     background-position:0 0;
