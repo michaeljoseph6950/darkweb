@@ -1907,11 +1907,16 @@ td {
   font-size: 18.4px !important;
   width: 100% !important;
 }
-#the-mail2,
-#the-id2,
-#the-date2,
-
-#the-date, #the-ip, #the-id, #the-mail {
+@media screen and (min-width: 876px){
+  #the-mail2,
+  #the-id2,
+  #the-date2,
+  #the-date, #the-ip, #the-id, #the-mail {
+    white-space: nowrap !important;
+    overflow-x: scroll !important;
+  }
+}
+#the-id, #the-mail {
   white-space: nowrap !important;
   overflow-x: scroll !important;
 }
@@ -1924,7 +1929,6 @@ td {
 #the-id::-webkit-scrollbar {
   height: 3px !important;
 }
-
 #email3 {
   margin-bottom: 14px !important;
 }
