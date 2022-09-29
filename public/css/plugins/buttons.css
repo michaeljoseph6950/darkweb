@@ -1630,30 +1630,7 @@ td {
 #example1 tbody td:first-child img {
   width: 50px !important;
 }
-#footer-email{
-  font-size: 21px !important;
-  line-height: 28px;
-  font-weight: 600 !important;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.footer-bar {
-  padding: 20px 0;
-  margin: 17px;
-  text-align: center;
-  background: rgba(18, 29, 51, 0.49);
-  z-index: 1;
-  position: relative;
-}
-@media screen and (max-width: 596px) {
-  #footer-email {
-    font-size: 18px !important;
- }
-  .footer-bar {
-    padding: 14px 0;
- }
-}
+
 .tutorial-img{
   width: 70px !important;
 }

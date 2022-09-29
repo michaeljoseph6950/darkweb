@@ -110,10 +110,6 @@ a:active {
 .navbar-default {
   border-bottom: 1.4px solid rgba(0, 115, 173, 0.49);
 }
-.footer-bar{
-  border: 1.4px solid rgba(0, 115, 173, 0.49);
-}
-
 .text-theme-color {
   color: #0073ad;
 }
