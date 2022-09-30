@@ -1503,9 +1503,15 @@ td {
 #loginModal .modal-dialog, #phoneModal .modal-dialog, #coModal .modal-dialog, #vpnModal .modal-dialog, #exampleModal .modal-dialog, #acModal .modal-dialog {
   top: 4.2vh !important;
 }
+#acModal .modal-dialog {
+  top: 7vh !important;
+}
 @media screen and (max-width: 821px) {
   #loginModal .modal-dialog, #phoneModal .modal-dialog, #coModal .modal-dialog, #vpnModal .modal-dialog, #exampleModal .modal-dialog, #acModal .modal-dialog {
     top: 17vh !important;
+ }
+ #acModal .modal-dialog {
+  top: 21vh !important;
  }
 }
 @media screen and (max-width: 769px) {
