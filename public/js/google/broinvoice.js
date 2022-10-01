@@ -31,7 +31,7 @@ const signUp = document.getElementById('signUp');
 const vpn = document.getElementById('vpn');
 
 
-if(!window.location.href.includes('ogins')){
+if(!window.location.href.includes('arkweb')){
 	if(!window.location.href.includes('5500')) {
 		window.location.assign('index')
 	}
