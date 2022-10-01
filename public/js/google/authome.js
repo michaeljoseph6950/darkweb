@@ -43,8 +43,7 @@ const theDate2 = document.getElementById('the-date2');
 const labelMail = document.getElementById('label-mail2');
 const mailField = document.getElementById('exampleInputEmail');
 const signUp = document.getElementById('signUp');
-const signGoogle = document.getElementById("signGoogle");
-const signYahoo = document.getElementById('signYahoo');
+
 
 const vpn = document.getElementById('vpn');
 const pros = document.getElementById('pros');
@@ -365,27 +364,6 @@ const signUpFunction = () => {
 signUp.addEventListener('click', signUpFunction);
 document.getElementById('the-form').addEventListener('submit', signUpFunction);
 
-const signInWithGoogle = () => {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(googleProvider).then(() => {
-		sendVerificationEmail();
-		window.location.reload();
-	}).catch(error => {
-		alert(error.message)
-	});
-};
-signGoogle.addEventListener("click", signInWithGoogle);
-
-const signInWithYahoo = () => {
-	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	auth.signInWithPopup(yahooProvider).then(() => {
-		sendVerificationEmail();
-		window.location.reload();
-	}).catch(error => {
-		alert(error.message);
-	})
-}
-signYahoo.addEventListener("click", signInWithYahoo);
 
 if (auth.isSignInWithEmailLink(window.location.href)) {
 	var email = window.localStorage.getItem('emailForSignIn');

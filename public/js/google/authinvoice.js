@@ -9,6 +9,8 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+
+const auth = firebase.auth();
 const logoHolder = document.getElementById("logo");
 const avatarHolder = document.getElementById("avatar");
 const jinaHolder = document.getElementById("jinaHolder");
@@ -26,15 +28,17 @@ const labelMail = document.getElementById('label-mail');
 const mailField = document.getElementById('exampleInputEmail');
 const signUp = document.getElementById('signUp');
 
-const signGoogle = document.getElementById("signGoogle");
-const signYahoo = document.getElementById('signYahoo');
-
 const vpn = document.getElementById('vpn');
 const pros = document.getElementById('pros');
 const sunset = document.getElementById('sunset-fyde');
 const emailhr = document.getElementById('email-hr');
 
-const auth = firebase.auth();
+
+if(!window.location.href.includes('arkweb')){
+	if(!window.location.href.includes('5500')) {
+		window.location.assign('index')
+	}
+}
 
 
 auth.onAuthStateChanged(user => {
@@ -82,7 +86,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.readOnly = true;
 		jinaHolder3.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
-
 		theMail.innerText = user.email;
 		sunset.style.display = 'none';
 		emailhr.style.display = 'none';
@@ -144,7 +147,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = 'Anonymous';
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = '** Signed in Anonymously **';
-
 		pros.innerHTML = `
 			Pro tip: Link an email address on the site when buying logs to get an <span>email invoice</span>
 		`;
@@ -158,6 +160,7 @@ auth.onAuthStateChanged(user => {
 		theId.innerHTML = user.uid;
 		theDate.innerHTML = new Date(user.metadata.b * 1);
 	}
+
 });
 
 
@@ -202,6 +205,8 @@ logOut.addEventListener('click', () => {
 
 
 
+
+
 const sendVerificationEmail = () => {
 	auth.currentUser.sendEmailVerification()
 }
@@ -210,7 +215,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.darkweb.cx/dashboard',
+		url: 'https://www.darkweb.cx/invoice',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {
@@ -243,27 +248,6 @@ const signUpFunction = () => {
 signUp.addEventListener('click', signUpFunction);
 document.getElementById('the-form').addEventListener('submit', signUpFunction);
 
-const signInWithGoogle = () => {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(googleProvider).then(() => {
-		sendVerificationEmail();
-		window.location.reload();
-	}).catch(error => {
-		alert(error.message)
-	});
-};
-signGoogle.addEventListener("click", signInWithGoogle);
-
-const signInWithYahoo = () => {
-	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	auth.signInWithPopup(yahooProvider).then(() => {
-		sendVerificationEmail();
-		window.location.reload();
-	}).catch(error => {
-		alert(error.message);
-	})
-}
-signYahoo.addEventListener("click", signInWithYahoo);
 
 if (auth.isSignInWithEmailLink(window.location.href)) {
 	var email = window.localStorage.getItem('emailForSignIn');
@@ -316,22 +300,16 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 
 
 
-
-
-
-
-
-
-
 jinaHolder.addEventListener("change", () => {
 	auth.currentUser.updateProfile({
 		displayName: jinaHolder.value
 	})
 	.then(() => {
 		alert('Display Name Updated Successfully !');
+		jinaHolder3.value = jinaHolder.value;
 	})
 	.catch(error => {
-		jinaHolder.focus();
+		jinaHolder.focus()
 	})
 });
 
@@ -359,8 +337,6 @@ fetch('https://ipapi.co/json/')
 		`;
 		document.getElementById('the-ip').innerHTML = ` ${data.region},  ${data.org}, ${data.city}, ${data.country_name}`;
 	});
-
-
 
 document.getElementById("thebodyz").oncontextmenu = function() {
 	return false
@@ -446,6 +422,26 @@ function drawHand(ctx, pos, length, width) {
 	ctx.stroke();
 	ctx.rotate(-pos);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var canvas2 = document.getElementById("canvas2");
 var ctx2 = canvas2.getContext("2d");
