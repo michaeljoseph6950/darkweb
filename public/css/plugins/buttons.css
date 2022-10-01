@@ -2193,8 +2193,6 @@ ul.countdown li p {
   width: 27px;
   border-radius: 3px;
 }
-#logout,
-#tele-contact,
 #vpn-nav {
   color: rgba(18, 29, 51, 1);
   cursor: pointer;
