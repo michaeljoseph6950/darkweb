@@ -54,6 +54,7 @@ auth.onAuthStateChanged(user => {
 		theMail.innerText = user.email;
 		linkBtn.innerHTML = `Linked <img src="img/partners/emails.png">`;
 		linkBtn.disabled = true;
+		// linkBtn.onclick = null;
 		if(user.email.includes('yahoo.com')){
 			vpn.innerHTML = `
 				View Profile
@@ -134,15 +135,6 @@ auth.onAuthStateChanged(user => {
 		theDate.innerHTML = new Date(user.metadata.b * 1);
 	}
 });
-
-
-
-
-
-
-
-
-
 
 
 
