@@ -3,7 +3,6 @@ var table1 = jQuery('#example1').DataTable();
 var table3 = jQuery('#example3').DataTable();
 
 var month = new Array();
-month[8] = "Septemeber";
 month[9] = "October";
 month[10] = "November";
 month[11] = "December";
