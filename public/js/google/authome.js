@@ -269,7 +269,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.logins.id/home',
+		url: 'https://www.darkweb.cx/home',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {

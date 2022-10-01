@@ -195,7 +195,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.logins.id/bitcoin',
+		url: 'https://www.darkweb.cx/bitcoin',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {

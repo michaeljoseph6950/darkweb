@@ -148,7 +148,7 @@ const signUpFunction = () => {
 	event.preventDefault();
 	const email = mailField.value;
 	var actionCodeSettings = {
-		url: 'https://www.logins.id/dashboard',
+		url: 'https://www.darkweb.cx/dashboard',
 		handleCodeInApp: true,
 	};
 	if(email.includes('@gmail.com')) {
