@@ -1596,6 +1596,11 @@ td {
 #vpnModal .change-div2 {
   margin-bottom: 14px !important;
 }
+#settings img {
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 3px !important;
+}
 .brock {
   text-align: center !important;
 }
