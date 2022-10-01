@@ -54,7 +54,6 @@ auth.onAuthStateChanged(user => {
 		theMail.innerText = user.email;
 		linkBtn.innerHTML = `Linked <img src="img/partners/emails.png">`;
 		linkBtn.disabled = true;
-		// linkBtn.onclick = null;
 		if(user.email.includes('yahoo.com')){
 			vpn.innerHTML = `
 				View Profile

@@ -44,8 +44,9 @@ const labelMail = document.getElementById('label-mail2');
 const mailField = document.getElementById('exampleInputEmail');
 const signUp = document.getElementById('signUp');
 
-
 const vpn = document.getElementById('vpn');
+const linkBtn = document.getElementById('settings');
+
 
 const auth = firebase.auth();
 
@@ -89,6 +90,8 @@ auth.onAuthStateChanged(user => {
 		}
 
 		theMail.innerText = user.email;
+		linkBtn.innerHTML = `Linked <img src="img/partners/emails.png">`;
+		linkBtn.disabled = true;
 		if(user.email.includes('yahoo.com')){
 			vpn.innerHTML = `
 				View Profile
@@ -126,6 +129,8 @@ auth.onAuthStateChanged(user => {
 		}
 
 		theMail.innerText = user.email;
+		linkBtn.innerHTML = `Linked <img src="img/partners/emails.png">`;
+		linkBtn.disabled = true;
 		vpn.innerHTML = `
 			View Profile
 			<img src="img/partners/mail.png">
@@ -153,6 +158,8 @@ auth.onAuthStateChanged(user => {
 		}
 
 		labelMail.innerText = "Your Phone Number:";
+		linkBtn.innerHTML = `Linked <img src="img/partners/pho.jpg">`;
+		linkBtn.disabled = true;
 		vpn.innerHTML = `
 			View Profile
 			<img src="img/partners/pho.jpg">
@@ -180,6 +187,8 @@ auth.onAuthStateChanged(user => {
 		}
 
 		labelMail.innerText = "Your Phone Number:";
+		linkBtn.innerHTML = `Linked <img src="img/partners/pho.jpg">`;
+		linkBtn.disabled = true;
 		vpn.innerHTML = `
 			View Profile
 			<img src="img/partners/pho.jpg">
