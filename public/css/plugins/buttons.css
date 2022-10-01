@@ -1884,16 +1884,10 @@ td {
   font-size: 18.4px !important;
   width: 100% !important;
 }
-@media screen and (min-width: 876px){
-  #the-mail2,
-  #the-id2,
-  #the-date2,
-  #the-date, #the-ip, #the-id, #the-mail {
-    white-space: nowrap !important;
-    overflow-x: scroll !important;
-  }
-}
-#the-id, #the-mail {
+#the-mail2,
+#the-id2,
+#the-date2,
+#the-date, #the-ip, #the-id, #the-mail {
   white-space: nowrap !important;
   overflow-x: scroll !important;
 }
