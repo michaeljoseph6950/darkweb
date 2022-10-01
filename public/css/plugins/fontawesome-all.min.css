@@ -28,6 +28,9 @@
 .fa-wallet:before {
     content:"\f555"
 }
+.fa-closed-captioning:before {
+    content: "\f20a"
+}
 
 .fa-comment-alt:before {
     content:"\f27a"
