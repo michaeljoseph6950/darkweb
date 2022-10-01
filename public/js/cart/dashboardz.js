@@ -1,6 +1,5 @@
 let items = [];
 var table1 = jQuery('#example1').DataTable();
-var table3 = jQuery('#example3').DataTable();
 
 var month = new Array();
 month[9] = "October";

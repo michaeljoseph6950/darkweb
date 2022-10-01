@@ -1139,13 +1139,11 @@ td {
   margin: 0 !important;
   padding: 0 !important;
 }
-#example3,
 #example1 {
   font-weight: 600;
   padding: 0;
   margin: 0;
 }
-#example3 .table-primary,
 #example1 .table-primary {
   text-transform: uppercase;
 }
@@ -1647,7 +1645,6 @@ td {
     transform: scale(1);
  }
 }
-#example3 tbody td:first-child img,
 #example1 tbody td:first-child img {
   width: 50px !important;
 }
