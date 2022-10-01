@@ -329,7 +329,7 @@ blink.high {
   display: block;
   width: 210px;
   height: 3px;
-  border-radius: 0;
+  border-radius: 7px;
   margin: 0 auto;
   position: absolute;
   left: 0;
@@ -2459,4 +2459,12 @@ ul.countdown li p {
   font-weight: 500 !important;
   padding: 5px -5px !important;
   line-height: 30px !important;
+}
+.link-email {
+  display: flex !important;
+}
+.link-email img {
+  width: 40px !important;
+  height: 40px !important;
+  margin: -10px 10px 5px 0 !important
 }
