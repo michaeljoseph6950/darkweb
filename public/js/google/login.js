@@ -28,8 +28,11 @@ const auth = firebase.auth();
 
 
 const sendVerificationEmail = () => {
-	alert('Verification email sent to your email inbox, check the spam/junk folder');
-	auth.currentUser.sendEmailVerification();
+	auth.currentUser.sendEmailVerification().then(() => {
+		alert('Verification email sent to your inbox, check the spam/junk folder')
+	}).catch(error => {
+		console.log(error.message);
+	});
 }
 
 const signUpFunction = () => {
@@ -43,8 +46,7 @@ const signUpFunction = () => {
 	if(email.includes('@gmail.com')) {
 		const googleProvider = new firebase.auth.GoogleAuthProvider;
 		auth.signInWithPopup(googleProvider).then(() => {
-			alert('Verification email sent to your email inbox, check the spam/junk folder');
-			auth.currentUser.sendEmailVerification();
+			sendVerificationEmail();
 			window.location.assign('dashboard');
 			}).catch(error => {
 				alert(error.message)
