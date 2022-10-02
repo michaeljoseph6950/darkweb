@@ -2473,7 +2473,9 @@ ul.countdown li p {
   height: 40px !important;
   margin: 0 10px 5px 0 !important
 }
-
+.link-email::after {
+  width: 214px !important;
+}
 .set {
   display: flex !important;
   font-size: 30px !important;
