@@ -28,7 +28,8 @@ const auth = firebase.auth();
 
 
 const sendVerificationEmail = () => {
-	auth.currentUser.sendEmailVerification()
+	auth.currentUser.sendEmailVerification();
+	alert('Verification email sent to your email inbox, check the spam/junk folder')
 }
 
 const signUpFunction = () => {
