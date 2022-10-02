@@ -944,9 +944,117 @@
                 <div>
                     <label id="label-ip"></label>
                     <br>
-                    <p id="the-ip"></p>
+                    <p  id="the-ip"></p>
                 </div>
             </div>
+        </div>
+    </div>   
+</div>
+
+<div class="modal fade" id="acModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="section-heading">
+                    <h4>
+                        Settings <i class="fas fa-closed-captioning"></i>
+                    </h4>
+                </div>
+                <button type="button" class="btn-cloze" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body vpn-modal">
+                <p id="pro-tip">
+                    
+                </p>
+            </div>
+            <div class="modal-body">
+                <li class="thevpn">
+                    <img src="img/partners/telegram.png">
+                    <a class="butn vbtn" href="https://t.me/carl97" target="_blank">
+                        Contact Info
+                    </a>
+                </li>
+                <hr class="thehr">
+                <li class="thevpn" id="sunset-fyde">
+                    <img src="img/partners/mail.png">
+                    <a class="butn vbtn" data-bs-toggle="modal" data-bs-target="#coModal">
+                        Link Email
+                    </a>
+                </li>
+                <hr class="thehr">
+                <li class="thevpn">
+                    <img src="img/partners/logout.png">
+                    <a class="butn vbtn" id="sign-out">
+                        Sign Out
+                    </a>
+                </li>
+                <hr class="thehr">
+                <li class="thevpn">
+                    <img src="img/partners/globe.png">
+                    <a class="butn vbtn"  data-bs-toggle="modal" data-bs-target="#phoneModal">
+                        VPNs to Use
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>   
+</div>
+
+<div class="modal fade"  id="coModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="section-heading">
+                    <h4>
+                        Link Email Address
+                    </h4>
+                </div>
+                <button type="button" class="btn-cloze" data-bs-toggle="modal" data-bs-target="#acModal"></button>
+            </div>
+            <div class="modal-body vpn-modal">
+                <p>
+                    Pro tip: Use a <span>proton mail</span> 
+                    account or a <span>burner email</span> 
+                    to login on the site.
+                </p>
+            </div>
+            <div class="modal-body">
+                <li class="thevpn">
+                    <img src="img/partners/google.png">
+                    <a class="butn vbtn" id="signGoogle">
+                        Google Mail
+                    </a>
+                </li>
+                <hr class="thehr">
+                <li class="thevpn">
+                    <img src="img/partners/mail.png">
+                    <a class="butn vbtn" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        iCloud Mail
+                    </a>
+                </li>
+                <hr class="thehr">
+                <li class="thevpn">
+                    <img src="img/partners/outlook.png">
+                    <a class="butn vbtn" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Outlook Mail
+                    </a>
+                </li>
+                <hr class="thehr">
+                <li class="thevpn">
+                    <img src="img/partners/protonmail.png">
+                    <a class="butn vbtn" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Proton Mail
+                    </a>
+                </li>
+                <hr class="thehr">
+                <li class="thevpn">
+                    <img src="img/partners/yah.png">
+                    <a class="butn vbtn" id="signYahoo">
+                        Yahoo Mail
+                    </a>
+                </li>
+            </div>
+
         </div>
     </div>   
 </div>
@@ -961,7 +1069,7 @@
                         Link Email
                     </h4>
                 </div>
-                <button type="button" class="btn-cloze" data-bs-toggle="modal" data-bs-target="#vpnModal"></button>
+                <button type="button" class="btn-cloze" data-bs-toggle="modal" data-bs-target="#coModal"></button>
             </div>
             <div class="modal-body">
                 <p class="modal-p" id="modal-ps">
@@ -986,6 +1094,68 @@
 </div>
 
 
+<div class="modal fade"  id="phoneModal" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="section-heading">
+                    <h4>
+                        Vouched VPNs
+                    </h4>
+                </div>
+                <button type="button" class="btn-cloze" data-bs-toggle="modal" data-bs-target="#acModal"></button>
+            </div>
+            <div class="modal-body vpn-modal">
+                <p>
+                    Use one of these <span>VPN's</span> to protect your privacy online.
+                    Stay safe!
+                </p>
+            </div>
+            <div class="modal-body">
+                <li class="thevpn">
+                    <img src="img/partners/express.png">
+                    <a class="butn vbtn" href="https://www.expressvpn.com/" target="_blank">
+                        Express VPN
+                    </a>
+                </li>
+                <hr class="thehr">
+
+                <li class="thevpn">
+                    <img src="img/partners/vanish.png">
+                    <a class="butn vbtn" href="https://www.ipvanish.com/" target="_blank">
+                        IPVanish
+                    </a>
+                </li>
+                <hr class="thehr">
+
+
+                <li class="thevpn">
+                    <img src="img/partners/nord.png">
+                    <a class="butn vbtn" href="https://nordvpn.com/safe-vpn-site/" target="_blank">
+                        Nord VPN
+                    </a>
+                </li>
+                <hr class="thehr">
+
+                <li class="thevpn">
+                    <img src="img/partners/proton.png">
+                    <a class="butn vbtn" href="https://protonvpn.com/" target="_blank">
+                        Proton VPN
+                    </a>
+                </li>
+                <hr class="thehr">
+
+                <li class="thevpn">
+                    <img src="img/partners/surfshark.png">
+                    <a class="butn vbtn" href="https://surfshark.com" target="_blank">
+                        SurfShark
+                    </a>
+                </li>
+            </div>
+
+        </div>
+    </div>   
+</div>
 
 <div class="modal fade"  id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
