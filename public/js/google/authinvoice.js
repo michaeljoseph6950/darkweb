@@ -29,7 +29,10 @@ const mailField = document.getElementById('exampleInputEmail');
 const signUp = document.getElementById('signUp');
 
 const vpn = document.getElementById('vpn');
-const linkBtn = document.getElementById('settings');
+const pros = document.getElementById('pro-tip');
+const sunset = document.getElementById('sunset-fyde');
+const theHr = document.getElementById('sunset-fyde').nextElementSibling;
+
 
 if(!window.location.href.includes('arkweb')){
 	if(!window.location.href.includes('5500')) {
@@ -58,8 +61,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = user.email;
-		linkBtn.innerHTML = `Linked <img src="img/partners/emails.png">`;
-		linkBtn.disabled = true;
 		if(user.email.includes('yahoo.com')){
 			vpn.innerHTML = `
 				View Profile
@@ -71,6 +72,9 @@ auth.onAuthStateChanged(user => {
 				<img src="img/partners/google.png">
 			`;
 		}
+		pros.innerHTML = `Pro tip: Check your email inbox @${user.email} spam/junk folder, after buying logs`;
+		sunset.style.display = 'none';
+		theHr.style.display = 'none';
 	} else if (!user.displayName && user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
@@ -81,12 +85,13 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.readOnly = true;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
 		theMail.innerText = user.email;
-		linkBtn.innerHTML = `Linked <img src="img/partners/emails.png">`;
-		linkBtn.disabled = true;
 		vpn.innerHTML = `
 			View Profile
 			<img src="img/partners/mail.png">
 		`;
+		pros.innerHTML = `Pro tip: Check your email inbox @${user.email} spam/junk folder, after buying logs`;
+		sunset.style.display = 'none';
+		theHr.style.display = 'none';
 	} else if(user.phoneNumber && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
@@ -95,12 +100,13 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.readOnly = true;
 		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
-		linkBtn.innerHTML = `Linked <img src="img/partners/pho.jpg">`;
-		linkBtn.disabled = true;
 		vpn.innerHTML = `
 			View Profile
 			<img src="img/partners/pho.jpg">
 		`;
+		pros.innerHTML = `Pro tip: Check your text messages inbox @${user.phoneNumber} for a link, after buying logs`;
+		sunset.style.display = 'none';
+		theHr.style.display = 'none';
 	}  else if(user.phoneNumber && !user.displayName) {
 		jinaHolder.value = user.phoneNumber;
 		jinaHolder2.innerText = 'User ID: ' + user.uid;
@@ -109,12 +115,13 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.readOnly = true;
 		theMail.innerText = user.phoneNumber;
 		labelMail.innerText = "Your Phone Number:";
-		linkBtn.innerHTML = `Linked <img src="img/partners/pho.jpg">`;
-		linkBtn.disabled = true;
 		vpn.innerHTML = `
 			View Profile
 			<img src="img/partners/pho.jpg">
 		`;
+		pros.innerHTML = `Pro tip: Check your text messages inbox @${user.phoneNumber} for a link, after buying logs`;
+		sunset.style.display = 'none';
+		theHr.style.display = 'none';
 	} else if(user.isAnonymous && user.displayName) {
 		jinaHolder.value = user.displayName;
 		jinaHolder3.value = user.displayName;
@@ -124,6 +131,7 @@ auth.onAuthStateChanged(user => {
 			View Profile
 			<img src="img/partners/anonymous.png">
 		`;
+		pros.innerHTML = `Pro tip: Link an email on the site to <span>get</span> a copy of <span>bank logs sent via mail</span>`;
 	} else if(user.isAnonymous && !user.displayName) {
 		jinaHolder.value = 'Anonymous';
 		jinaHolder3.value = 'Anonymous';
@@ -133,6 +141,7 @@ auth.onAuthStateChanged(user => {
 			View Profile
 			<img src="img/partners/anonymous.png">
 		`;
+		pros.innerHTML = `Pro tip: Link an email on the site to <span>get</span> a copy of <span>bank logs sent via mail</span>`;
 	} 
 
 	if(user.uid){
@@ -149,6 +158,26 @@ auth.onAuthStateChanged(user => {
 
 
 
+const logOut = document.getElementById('sign-out');
+logOut.addEventListener('click', () => {
+    if(auth.currentUser.isAnonymous) {
+		auth.currentUser.delete()
+			.then(() => {
+				window.location.assign('index');
+			})
+			.catch(error => {
+				console.error(error);
+			})
+	} else {
+		auth.signOut()
+			.then(() => {
+				window.location.assign('index');
+			})
+			.catch(error => {
+				console.error(error);
+			})
+	}
+})
 
 
 
