@@ -42,15 +42,8 @@ const signUpFunction = () => {
 	if(email.includes('@gmail.com')) {
 		const googleProvider = new firebase.auth.GoogleAuthProvider;
 		auth.signInWithPopup(googleProvider).then(() => {
+			sendVerificationEmail();
 			window.location.assign('dashboard');
-			auth.sendSignInLinkToEmail(email, actionCodeSettings)
-				.then(() => {
-					alert('Verification link sent to your email ' + email + " check the spam / junk folder");
-					window.localStorage.setItem('emailForSignIn', email);
-				})
-				.catch(error => {
-					alert(error.message);
-				});
 			}).catch(error => {
 				alert(error.message)
 			});
